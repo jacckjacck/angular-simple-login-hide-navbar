@@ -1,0 +1,7 @@
+.fix-nav-icon{
+    line-height: 40px;
+}
+
+:host-context(.active-menu-item) li {
+  background-color: rgba(0, 0, 0, 0.05);
+}

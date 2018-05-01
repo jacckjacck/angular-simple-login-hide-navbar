@@ -1,0 +1,60 @@
+<div class="row login-frm">
+  <div class="col s12 m4 l4">
+      &nbsp;
+  </div>
+  <div class="col s12 m4 l4 center-align">
+    <form [formGroup]="loginForm" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+      <mz-card
+        class=""
+        [hoverable]="true">
+        <mz-card-title>
+          <i mz-icon-mdi [icon]="'lock'" ></i>
+          LOGIN
+        </mz-card-title>
+        <mz-card-content>
+          <mz-input-container>
+            <input mz-input
+              [label]="'Email'"
+              [validate]="true"
+              [dataError]="'Email is invalid'"
+              [dataSuccess]="'Email is valid'"
+              id="email-input"
+              type="email"
+              formControlName="username">
+          </mz-input-container>
+          <mz-input-container>
+              <input mz-input
+                [label]="'Password'"
+                [validate]="true"
+                [dataError]="'Password is invalid'"
+                [dataSuccess]="'Password is valid'"
+                id="password-input"
+                type="password"
+                formControlName="password">
+            </mz-input-container>
+        </mz-card-content>
+        <mz-card-action>
+            <a mz-button [large]="'true'" class="white black-text" (click)="loginForm.reset()">
+                Cancel
+            </a>
+          <button type="submit" mz-button [large]="'true'" [disabled]="!loginForm.valid" >
+              Login
+          </button>
+        </mz-card-action>
+      </mz-card>
+    </form>
+  </div>
+  <div class="col s12 m4 l4">
+    &nbsp;
+  </div>
+</div>
+
+<mz-modal #bottomSheetModal [options]="modalOptions" >
+  <mz-modal-content>
+      <div class="row center-align">
+          <mz-progress
+            [backgroundClass]="'blue lighten-4'">
+          </mz-progress>
+      </div>
+  </mz-modal-content>
+</mz-modal>

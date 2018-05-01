@@ -1,0 +1,42 @@
+<div *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <div class="navbar-fixed" >
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <a mz-button [flat]="'true'" [float]="'true'" id="btn-sidenav-demo" >
+          <i mz-icon-mdi class="fix-nav-icon"
+            [icon]="'menu'"
+            [class]="">
+          </i>
+        </a>    
+  
+          
+        <a [routerLink]="['/home']" class="brand-logo">You are logged in!</a>
+        <ul id="nav-mobile" class="right hide-on-small-only">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
+  
+  <mz-sidenav
+    [id]="'sidenav-demo'"
+    [collapseButtonId]="'btn-sidenav-demo'"
+    [closeOnClick]="true">
+    <mz-sidenav-header>
+      Menu
+    </mz-sidenav-header>
+    
+    <mz-sidenav-link routerLinkActive="active-menu-item">
+      <a [routerLink]="['/home']"><i mz-icon-mdi [icon]="'home'"></i> Home</a>
+    </mz-sidenav-link>
+    <mz-sidenav-divider></mz-sidenav-divider>
+    <mz-sidenav-subheader>Options</mz-sidenav-subheader>
+    <mz-sidenav-link>
+        <a (click)="logout()" class="waves-effect"><i mz-icon-mdi [icon]="'power'"></i>Logout</a>
+    </mz-sidenav-link>
+  </mz-sidenav>
+  
+  </div>
